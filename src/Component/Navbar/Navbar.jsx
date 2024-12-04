@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { NavLink } from 'react-router-dom'; // Use NavLink instead of Link
 import Logo from '../Pages/imges/Logo.png';
 
 const Navbar = () => {
@@ -25,6 +25,8 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const activeClass = "text-red-600 font-bold";
 
   return (
     <nav
@@ -68,36 +70,44 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex text-white text-lg font-semibold space-x-10">
           <li>
-            <Link
+            <NavLink
               to="/"
-              className="hover:text-red-600 hover:underline underline-offset-4 transition duration-300"
+              className={({ isActive }) =>
+                isActive ? activeClass : 'hover:text-red-600 hover:underline underline-offset-4 transition duration-300'
+              }
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/about"
-              className="hover:text-red-600 hover:underline underline-offset-4 transition duration-300"
+              className={({ isActive }) =>
+                isActive ? activeClass : 'hover:text-red-600 hover:underline underline-offset-4 transition duration-300'
+              }
             >
               About
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/contact"
-              className="hover:text-red-600 hover:underline underline-offset-4 transition duration-300"
+              className={({ isActive }) =>
+                isActive ? activeClass : 'hover:text-red-600 hover:underline underline-offset-4 transition duration-300'
+              }
             >
               Contact Us
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/join"
-              className="hover:text-red-600 hover:underline underline-offset-4 transition duration-300"
+              className={({ isActive }) =>
+                isActive ? activeClass : 'hover:text-red-600 hover:underline underline-offset-4 transition duration-300'
+              }
             >
               Join Us
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -107,36 +117,44 @@ const Navbar = () => {
         <div className="md:hidden">
           <ul className="flex flex-col items-center space-y-4 mt-4 text-white transition-all duration-500 ease-in-out">
             <li>
-              <Link
+              <NavLink
                 to="/"
-                className="text-lg hover:underline underline-offset-4 transition duration-300"
+                className={({ isActive }) =>
+                  isActive ? activeClass : 'text-lg hover:underline underline-offset-4 transition duration-300'
+                }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/about"
-                className="text-lg hover:underline underline-offset-4 transition duration-300"
+                className={({ isActive }) =>
+                  isActive ? activeClass : 'text-lg hover:underline underline-offset-4 transition duration-300'
+                }
               >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/contact"
-                className="text-lg hover:underline underline-offset-4 transition duration-300"
+                className={({ isActive }) =>
+                  isActive ? activeClass : 'text-lg hover:underline underline-offset-4 transition duration-300'
+                }
               >
                 Contact Us
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/join"
-                className="text-lg hover:underline underline-offset-4 transition duration-300"
+                className={({ isActive }) =>
+                  isActive ? activeClass : 'text-lg hover:underline underline-offset-4 transition duration-300'
+                }
               >
                 Join Us
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

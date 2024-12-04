@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Logo from "../Pages/imges/Logo.png";
 import { FaYoutube, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 
@@ -20,30 +21,32 @@ const Footer = () => {
         <div className="mb-6">
           <h3 className="text-2xl font-bold mb-2">Links</h3>
           <ul>
-            <li><a href="#" className="hover:text-red-600 text-lg">Home</a></li>
-            <li><a href="#" className="hover:text-red-600 text-lg">About</a></li>
+            <li><Link to="/" className="hover:text-red-600 text-lg">Home</Link></li> {/* Updated to use Link */}
+            <li><Link to="/about" className="hover:text-red-600 text-lg">About</Link></li> {/* Updated to use Link */}
+            <li><Link to="/contact" className="hover:text-red-600 text-lg">Contact Us</Link></li> {/* Updated to use Link */}
+            <li><Link to="/joinus" className="hover:text-red-600 text-lg">Join Us</Link></li> {/* Updated to use Link */}
           </ul>
         </div>
 
         {/* Get in Touch Section */}
-      
-<div className="mb-6">
-  <h3 className="text-2xl font-bold mb-2">Get in touch</h3>
-  <div className="flex space-x-4">
-    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" >
-      <FaYoutube size={24} />
-    </a>
-    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" >
-      <FaInstagram size={24} />
-    </a>
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" >
-      <FaFacebook size={24} />
-    </a>
-    <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" >
-      <FaTiktok size={24} />
-    </a>
-  </div>
-</div>
+        <div className="mb-6">
+          <h3 className="text-2xl font-bold mb-2">Get in touch</h3>
+          <div className="flex space-x-4">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" >
+              <FaYoutube size={24} />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" >
+              <FaInstagram size={24} />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" >
+              <FaFacebook size={24} />
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" >
+              <FaTiktok size={24} />
+            </a>
+          </div>
+        </div>
+
         {/* Contact Us Section */}
         <div>
           <h3 className="text-2xl font-bold mb-2">Contact us</h3>
